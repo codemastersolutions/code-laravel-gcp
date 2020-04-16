@@ -1,8 +1,20 @@
 steps:
-    -   id: "Run docker-compose"
-        name: "gcr.io/$PROJECT_ID/docker-compose:1.25.5"
-        args: ["-f","docker-compose.cloud-build.yaml","up","-d"]
+    -   id: 'Run docker-compose'
+        name: 'gcr.io/$PROJECT_ID/docker-compose:1.25.5'
+        args: ['-f','docker-compose.cloud-build.yaml','up','-d']
 
-    -   id: "Run docker ps"
-        name: "gcr.io/cloud-builders/docker"
-        args: ["ps"]
+    -   id: 'Run composer install'
+        name: 'gcr.io/cloud-builders/docker'
+        args: ['exec','-t','app','composer','install']
+
+    -   id: 'Run docker ps'
+        name: 'gcr.io/cloud-builders/docker'
+        args: ['ps']
+#
+#    -   id: 'Run docker ps'
+#        name: 'gcr.io/cloud-builders/docker'
+#        args: ['ps']
+#
+#    -   id: 'Run docker ps'
+#        name: 'gcr.io/cloud-builders/docker'
+#        args: ['ps']
