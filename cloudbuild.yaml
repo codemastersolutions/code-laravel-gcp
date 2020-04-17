@@ -13,7 +13,7 @@ steps:
 
     -   id: 'Run key:generate command'
         name: 'gcr.io/cloud-builders/docker'
-        args: ['exec','-t','app','php','/var/www/artisan','.env']
+        args: ['exec','-t','app','php','/var/www/artisan','key:generate']
 
     -   id: 'Run docker ps'
         name: 'gcr.io/cloud-builders/docker'
