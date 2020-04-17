@@ -7,18 +7,14 @@ steps:
         name: 'gcr.io/cloud-builders/docker'
         args: ['exec','-t','app','composer','install']
 
-#    -   id: 'Copy .env file'
-#        name: 'gcr.io/cloud-builders/docker'
-#        args: ['exec','-t','app','cp','.env.example','.env']
-#
-#    -   id: 'Run key:generate command'
-#        name: 'gcr.io/cloud-builders/docker'
-#        args: ['exec','-t','app','php','/var/www/artisan','.env']
+    -   id: 'Copy .env file'
+        name: 'gcr.io/cloud-builders/docker'
+        args: ['exec','-t','app','cp','.env.example','.env']
+
+    -   id: 'Run key:generate command'
+        name: 'gcr.io/cloud-builders/docker'
+        args: ['exec','-t','app','php','/var/www/artisan','.env']
 
     -   id: 'Run docker ps'
         name: 'gcr.io/cloud-builders/docker'
         args: ['ps']
-
-    -   id: 'Run ls command'
-        name: 'gcr.io/cloud-builders/docker'
-        args: ['exec','-t','app','ls','/var/www/']
