@@ -25,4 +25,4 @@ steps:
 
     -   id: 'Run image golang'
         name: 'gcr.io/$PROJECT_ID/code-desafio-ci'
-        args: []
+        args: ["./main"]
