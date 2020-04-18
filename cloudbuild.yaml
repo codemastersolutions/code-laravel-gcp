@@ -22,7 +22,3 @@ steps:
     -   id: 'Run PHPUnit'
         name: 'gcr.io/cloud-builders/docker'
         args: ['exec','-t','app','php','/var/www/vendor/bin/phpunit','-c','/var/www/phpunit.xml']
-
-    -   id: 'Run image golang'
-        name: 'gcr.io/$PROJECT_ID/code-desafio-ci'
-        args: ["/app/main"]
